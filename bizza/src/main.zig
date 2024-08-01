@@ -11,6 +11,10 @@ pub fn main() !void {
     while (i < 1000000500) : (i *= 2) {
         try stdout.print("{} \n", .{i});
         sum += i;
+        if (i == 64) break;
+    }
+    for (arr) |char| {
+        try stdout.print("value {}", .{char});
     }
     try stdout.print("sum is {}", .{sum});
 }
