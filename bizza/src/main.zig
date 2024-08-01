@@ -23,7 +23,8 @@ pub fn main() !void {
     const loz: u64 = 1;
     try stdout.print("type {} \n", .{@TypeOf(loz)});
     const xoxox: i32 = fib(40);
-    try stdout.print("fib {}", .{xoxox});
+    try stdout.print("fib {}\n", .{xoxox});
+    try difer(i);
 }
 pub fn fib(n: i32) i32 {
     if (n == 1 or n == 0) {
@@ -31,7 +32,14 @@ pub fn fib(n: i32) i32 {
     }
     return fib(n - 1) + fib(n - 2);
 }
-
+pub fn difer(n: i32) !void {
+    var no = n;
+    {
+        defer no += 12;
+        try std.io.getStdOut().writer().print(" {} \n ", .{no});
+    }
+    try std.io.getStdOut().writer().print(" {} \n", .{no});
+}
 pub fn double(x: u32) u32 {
     return 2 * x;
 }
