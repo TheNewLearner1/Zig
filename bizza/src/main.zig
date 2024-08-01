@@ -13,8 +13,9 @@ pub fn main() !void {
         sum += i;
         if (i == 64) break;
     }
-    for (arr) |char| {
-        try stdout.print("value {} \n", .{char});
+    for (arr, 0..) |char, ind| {
+        try stdout.print("value {} ", .{char});
+        try stdout.print("index {} \n", .{ind});
     }
     try stdout.print("sum is {}", .{sum});
 }
