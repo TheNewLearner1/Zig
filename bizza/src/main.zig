@@ -17,9 +17,24 @@ pub fn main() !void {
         try stdout.print("value {} ", .{char});
         try stdout.print("index {} \n", .{ind});
     }
-    try stdout.print("sum is {}", .{sum});
+    try stdout.print("sum is {}\n", .{sum});
+    const z = double(1);
+    try stdout.print("z is {}\n", .{z});
+    const loz: u64 = 1;
+    try stdout.print("type {} \n", .{@TypeOf(loz)});
+    const xoxox: i32 = fib(40);
+    try stdout.print("fib {}", .{xoxox});
+}
+pub fn fib(n: i32) i32 {
+    if (n == 1 or n == 0) {
+        return n;
+    }
+    return fib(n - 1) + fib(n - 2);
 }
 
+pub fn double(x: u32) u32 {
+    return 2 * x;
+}
 const expect = std.testing.expect;
 
 test "if statement" {
