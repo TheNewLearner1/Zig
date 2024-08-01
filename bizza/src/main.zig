@@ -14,7 +14,7 @@ pub fn main() !void {
         if (i == 64) break;
     }
     for (arr) |char| {
-        try stdout.print("value {}", .{char});
+        try stdout.print("value {} \n", .{char});
     }
     try stdout.print("sum is {}", .{sum});
 }
