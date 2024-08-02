@@ -1,7 +1,6 @@
 const std = @import("std");
 pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
-
     const arr = [_]i32{ 1, 2, 3, 4, 5 };
     const len = arr.len;
     try stdout.print("hi \n", .{});
