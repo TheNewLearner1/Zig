@@ -21,6 +21,12 @@ pub fn main() !void {
     try stdout.print("z is {}\n", .{z});
     const loz: u64 = 1;
     try stdout.print("type {} \n", .{@TypeOf(loz)});
+    var x: i32 = 1;
+
+    while (x <= 100000000) : (x += 2) {
+        try stdout.print("x is {} \n ", .{x});
+    }
+
     const xoxox: i32 = fib(40);
     try stdout.print("fib {}\n", .{xoxox});
     try difer(i);
