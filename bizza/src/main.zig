@@ -12,7 +12,7 @@ pub fn main() !void {
         sum += i;
         if (i == 64) break;
     }
-    for (arr, 0..) |char, ind| {
+    for (arr, 1..) |char, ind| {
         try stdout.print("value {} ", .{char});
         try stdout.print("index {} \n", .{ind});
     }
@@ -23,13 +23,16 @@ pub fn main() !void {
     try stdout.print("type {} \n", .{@TypeOf(loz)});
     var x: i32 = 1;
 
-    while (x <= 100000000) : (x += 2) {
+    while (x <= 10) : (x += 2) {
         try stdout.print("x is {} \n ", .{x});
     }
 
     const xoxox: i32 = fib(40);
     try stdout.print("fib {}\n", .{xoxox});
     try difer(i);
+
+    switch
+    
 }
 pub fn fib(n: i32) i32 {
     if (n == 1 or n == 0) {
